@@ -23,7 +23,7 @@ int main()
     {
         for (int j = 0; j < MES; j++)
         {
-           printf("anio[%d] mes[%d]= %d \n",i,j,matriz[i][j]);
+           printf("anio[%d] mes[%d]= %d \n",i+1,j+1,matriz[i][j]);
         }
         
     }
@@ -46,6 +46,37 @@ int main()
     {
         printf("promedio anio[%d]=%.2f \n",i,promedio[i]);
     }
+    printf("\n\n");
     
+//punto d
+float valMaximo=0, valMinimo=0;
+int mesMaximo=0, mesMinimo=0, j=0;
+for (int i = 0; i < ANIO; i++)
+{
+    valMaximo=matriz[i][j];
+    valMinimo=matriz[i][j];
+    for (int j = 0; j < MES; j++)
+    {
+        if (valMaximo < matriz[i][j])
+        {
+            valMaximo= matriz[i][j];
+            mesMaximo= j+1;
+        }
+          if (valMinimo > matriz[i][j])
+        {
+            valMinimo= matriz[i][j];
+            mesMinimo= j+1;
+        }
+        
+    }
+    printf("el valor Minimo obtenido en el anio %d ocurrido en el mes %d es: %.2f \n",i+1,mesMinimo,valMinimo);
+    printf("el valor Maximo obtenido en el anio %d ocurrido en el mes %d es: %.2f \n",i+1,mesMaximo,valMaximo);
+    printf("\n");
+    mesMaximo=0;
+    mesMinimo=0;
+    
+}
+
+
     return 0;
 }
