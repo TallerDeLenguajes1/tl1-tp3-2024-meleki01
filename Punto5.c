@@ -1,15 +1,19 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#define CANT_NOMBRES 5
+
 
 int main()
 {
     char *aux,**nombres;
+    int cantNombres;
+    puts("ingrese la cantidad de nombres:");
+    scanf("%d",&cantNombres);
+    fflush(stdin);
     aux= (char *) malloc(sizeof(char) * 100);
-    nombres = (char **) malloc(sizeof(char*)* CANT_NOMBRES);
+    nombres = (char **) malloc(sizeof(char*) * cantNombres);
 
-    for (int i = 0; i < CANT_NOMBRES; i++)
+    for (int i = 0; i < cantNombres; i++)
     {
         puts("ingrese un nombre:");
         gets(aux);
@@ -21,12 +25,12 @@ int main()
     }
     
 
-    for (int i = 0; i < CANT_NOMBRES; i++)
+    for (int i = 0; i < cantNombres; i++)
     {
         printf("nombre[%d]= %s\n",i+1, nombres[i]);
     }
     
-    for (int i = 0; i < CANT_NOMBRES; i++)
+    for (int i = 0; i < cantNombres; i++)
     {
         free(nombres[i]);
     }
